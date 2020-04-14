@@ -35,14 +35,17 @@ public class Main {
 
         player1.setPlayer(name1);
         cpuPlayer.setPlayer("CPU");
-        
+
 
         System.out.println("\n****\tGame Started\t****\n\n");
         //testGame(player1, cpuPlayer);
         //System.out.println("\n\nPlayer: " + pPoint + "\t\tCPU: " + cPoint);
         System.out.println("\n1 - Rock\t2 - Paper\t3 - Scissors\t");
+
+
+
         while(gamePoint == false) {
-            System.out.println("\n\nPlayer: " + player1.score + "\t\tCPU: " + cpuPlayer.score);
+            System.out.println("\n\nPlayer: " + player1.score + "\t\tCPU: " + cpuPlayer.score +"\n");
 
             int move1, move2;
             String move1Name, move2Name;
@@ -51,54 +54,54 @@ public class Main {
 
 
             if(move1 == 1 && move2 == 1) {
-                System.out.println("Duel Draw: " +
+                System.out.println("Duel Draw: \t\t" +
                             player1.name + "'s move: " + player1.moveName +
                             "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                         );
 
             } else if (move1 == 1 && move2 == 2) {
-                System.out.println( cpuPlayer.name + " Won: " +
+                System.out.println( cpuPlayer.name + " Won: \t\t" +
                         player1.name + "'s move: " + player1.moveName +
                         "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
                 cpuPlayer.duelWon();
             } else if (move1 == 1 && move2 == 3) {
-                System.out.println( player1.name + " Won: " +
+                System.out.println( player1.name + " Won: \t\t" +
                         player1.name + "'s move: " + player1.moveName +
                         "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
                 player1.duelWon();
             } else if (move1 == 2 && move2 == 1) {
-                System.out.println( player1.name + " Won: " +
+                System.out.println( player1.name + " Won: \t\t" +
                         player1.name + "'s move: " + player1.moveName +
                         "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
                 player1.duelWon();
             } else if (move1 == 2 && move2 == 2) {
-                System.out.println("Duel Draw: " +
+                System.out.println("Duel Draw: \t\t" +
                         player1.name + "'s move: " + player1.moveName +
                         "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
             } else if (move1 == 2 && move2 == 3) {
-                System.out.println( cpuPlayer.name + " Won: " +
+                System.out.println( cpuPlayer.name + " Won: \t\t" +
                         player1.name + "'s move: " + player1.moveName +
                         "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
                 cpuPlayer.duelWon();
             } else if (move1 == 3 && move2 == 1) {
-                System.out.println( cpuPlayer.name + " Won: " +
+                System.out.println( cpuPlayer.name + " Won: \t\t" +
                         player1.name + "'s move: " + player1.moveName +
                         "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
                 cpuPlayer.duelWon();
             } else if (move1 == 3 && move2 == 2) {
-                System.out.println( player1.name + " Won: " +
+                System.out.println( player1.name + " Won: \t\t" +
                         player1.name + "'s move: " + player1.moveName +
                         "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
                 player1.duelWon();
             } else if (move1 == 3 && move2 == 3) {
-                System.out.println("Duel Draw: " +
+                System.out.println("Duel Draw: \t\t" +
                         player1.name + "'s move: " + player1.moveName +
                         "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
@@ -106,16 +109,17 @@ public class Main {
             }
 
             if(player1.score == 3) {
-
-                gameCheck(player1);
-
+                System.out.println("Congratulations! You Won!");
+                System.out.println("\n\nPlayer: " + player1.score + "\t\tCPU: " + cpuPlayer.score +"\n");
             } else if (cpuPlayer.score == 3) {
-                gameCheck(cpuPlayer);
-
+                System.out.println("Awwh! You Lost :(");
+                System.out.println("\n\nPlayer: " + player1.score + "\t\tCPU: " + cpuPlayer.score +"\n");
             }
 
         }
     }
+
+
 
     public static void testGame(Player p1, Player p2) {
         p1.getName();

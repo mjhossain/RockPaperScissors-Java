@@ -53,7 +53,7 @@ public class Player {
                 this.moveName = "Scissors";
                 break;
         }
-        System.out.println(this.moveName);
+        //System.out.println(this.moveName);
         return move;
     }
 

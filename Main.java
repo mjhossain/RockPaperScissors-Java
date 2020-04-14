@@ -1,3 +1,9 @@
+/*
+Dev Name: Mohammed
+Dev GHub: @mjhossain (github)
+Dev Email: mjhossainnyc@gmail.com
+Description: Classic Rock-Paper-Scissors Game
+ */
 package RockPaperScissors;
 import java.util.Scanner;
 
@@ -110,7 +116,7 @@ public class Main {
 
     public static void gameCheck(Player p) {
 
-        System.out.printf("Congratulations! " + p.name + " You have won the game!");
+        System.out.println("Congratulations! " + p.name + " You have won the game!");
 
         System.exit(0);
     }
@@ -122,3 +128,4 @@ public class Main {
 // 1. Make Winning Statement more clear
 // 2. Show Player Points after every duel
 // 3. Handle Wrong Inputs
+// 4. Give Option to Restart Game or Start New Game

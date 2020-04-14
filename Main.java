@@ -5,12 +5,9 @@ Dev Email: mjhossainnyc@gmail.com
 Description: Classic Rock-Paper-Scissors Game
  */
 
-// FIXME :
-//  1. Make Winning Statement more clear
-//  2. Show Player Points after every duel
-//  3. Handle Wrong Inputs
-//  4. Give Option to Restart Game or Start New Game
-//  5. Player vs CPU
+
+//  TODO Give Option to Restart Game or Start New Game
+
 
 package RockPaperScissors;
 import java.util.Random;
@@ -109,16 +106,17 @@ public class Main {
             }
 
             if(player1.score == 3) {
-                System.out.println("Congratulations! You Won!");
-                System.out.println("\n\nPlayer: " + player1.score + "\t\tCPU: " + cpuPlayer.score +"\n");
+                System.out.println("\n\nCongratulations! You Won!");
+                System.out.println("Player: " + player1.score + "\t\tCPU: " + cpuPlayer.score +"\n");
+                System.exit(0);
             } else if (cpuPlayer.score == 3) {
-                System.out.println("Awwh! You Lost :(");
-                System.out.println("\n\nPlayer: " + player1.score + "\t\tCPU: " + cpuPlayer.score +"\n");
+                System.out.println("\n\nAwwh! You Lost :(");
+                System.out.println("Player: " + player1.score + "\t\tCPU: " + cpuPlayer.score +"\n");
+                System.exit(0);
             }
 
         }
     }
-
 
 
     public static void testGame(Player p1, Player p2) {
@@ -126,12 +124,6 @@ public class Main {
         p2.getName();
     }
 
-    public static void gameCheck(Player p) {
-
-        System.out.println("Congratulations! " + p.name + " You have won the game!");
-
-        System.exit(0);
-    }
 
 }
 

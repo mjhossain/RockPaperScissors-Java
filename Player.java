@@ -22,20 +22,23 @@ public class Player {
     }
 
     public int makeMove() {
-        int move;
+        int move = 0;
 
         if (!this.isCpu) {
 
             System.out.print(this.name + "'s move: ");
             move = input.nextInt();
-            /*
+
             while(move < 1 || move > 3) {
                 System.out.print("Invalid input enter again: ");
                 move = input.nextInt();
             }
-             */
+
         } else {
             move = rand.nextInt(4);
+            while(move < 1 || move > 3) {
+                move = rand.nextInt(4);
+            }
         }
 
 
@@ -50,7 +53,7 @@ public class Player {
                 this.moveName = "Scissors";
                 break;
         }
-
+        System.out.println(this.moveName);
         return move;
     }
 

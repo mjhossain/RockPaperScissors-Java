@@ -28,26 +28,24 @@ public class Main {
 
 
         String name1, name2;
-        System.out.println(
-                "\n\n\n" +
-                        "\t\t\tRock Paper Scissors\n\n"
-        );
+        System.out.println("\t\t\tRock Paper Scissors\n\n");
 
         System.out.print("Enter Player Name: ");
         name1 = input.nextLine();
 
         player1.setPlayer(name1);
         cpuPlayer.setPlayer("CPU");
+        
 
-        // TODO Set Point System Here
-
-        System.out.println("\n\n****\tGame Started\t****\n\n");
+        System.out.println("\n****\tGame Started\t****\n\n");
         //testGame(player1, cpuPlayer);
-        System.out.println("\n\n1 - Rock\t2 - Paper\t3 - Scissors\t");
+        //System.out.println("\n\nPlayer: " + pPoint + "\t\tCPU: " + cPoint);
+        System.out.println("\n1 - Rock\t2 - Paper\t3 - Scissors\t");
         while(gamePoint == false) {
+            System.out.println("\n\nPlayer: " + player1.score + "\t\tCPU: " + cpuPlayer.score);
+
             int move1, move2;
             String move1Name, move2Name;
-
             move1 = player1.makeMove();
             move2 = cpuPlayer.makeMove();
 

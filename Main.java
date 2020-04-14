@@ -4,17 +4,26 @@ Dev GHub: @mjhossain (github)
 Dev Email: mjhossainnyc@gmail.com
 Description: Classic Rock-Paper-Scissors Game
  */
+
+// FIXME :
+//  1. Make Winning Statement more clear
+//  2. Show Player Points after every duel
+//  3. Handle Wrong Inputs
+//  4. Give Option to Restart Game or Start New Game
+//  5. Player vs CPU
+
 package RockPaperScissors;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
 
     static Scanner input = new Scanner(System.in);
-
+    static Random rand = new Random();
 
     public static void main(String[] args) {
         Player player1 = new Player();
-        Player player2 = new Player();
+        Player cpuPlayer = new Player();
         boolean gamePoint = false;
 
 
@@ -24,75 +33,73 @@ public class Main {
                         "\t\t\tRock Paper Scissors\n\n"
         );
 
-        System.out.print("Enter Player 1: ");
+        System.out.print("Enter Player Name: ");
         name1 = input.nextLine();
         player1.setPlayer(name1);
 
-        System.out.print("Enter Player 2: ");
-        name2 = input.nextLine();
-        player2.setPlayer(name2);
+        cpuPlayer.setPlayer("CPU");
 
         System.out.println("\n\n****\tGame Started\t****\n\n");
-        //testGame(player1, player2);
+        //testGame(player1, cpuPlayer);
 
         while(gamePoint == false) {
             int move1, move2;
             String move1Name, move2Name;
-            move1 = player1.makeMove();
-            move2 = player2.makeMove();
+            move1 = player1.makeMove(false);
+            move2 = cpuPlayer.makeMove(true);
 
 
             if(move1 == 1 && move2 == 1) {
                 System.out.println("Duel Draw: " +
                             player1.name + "'s move: " + player1.moveName +
-                            "\t" + player2.name + "'s move: " + player2.moveName
+                            "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                         );
 
             } else if (move1 == 1 && move2 == 2) {
-                System.out.println( player2.name + " Won: " +
+                System.out.println( cpuPlayer.name + " Won: " +
                         player1.name + "'s move: " + player1.moveName +
-                        "\t" + player2.name + "'s move: " + player2.moveName
+                        "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
-                player2.duelWon();
+                cpuPlayer.duelWon();
             } else if (move1 == 1 && move2 == 3) {
                 System.out.println( player1.name + " Won: " +
                         player1.name + "'s move: " + player1.moveName +
-                        "\t" + player2.name + "'s move: " + player2.moveName
+                        "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
                 player1.duelWon();
             } else if (move1 == 2 && move2 == 1) {
                 System.out.println( player1.name + " Won: " +
                         player1.name + "'s move: " + player1.moveName +
-                        "\t" + player2.name + "'s move: " + player2.moveName
+                        "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
                 player1.duelWon();
             } else if (move1 == 2 && move2 == 2) {
                 System.out.println("Duel Draw: " +
                         player1.name + "'s move: " + player1.moveName +
-                        "\t" + player2.name + "'s move: " + player2.moveName
+                        "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
             } else if (move1 == 2 && move2 == 3) {
-                System.out.println( player2.name + " Won: " +
+                System.out.println( cpuPlayer.name + " Won: " +
                         player1.name + "'s move: " + player1.moveName +
-                        "\t" + player2.name + "'s move: " + player2.moveName
+                        "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
-                player2.duelWon();
+                cpuPlayer.duelWon();
             } else if (move1 == 3 && move2 == 1) {
-                System.out.println( player2.name + " Won: " +
+                System.out.println( cpuPlayer.name + " Won: " +
                         player1.name + "'s move: " + player1.moveName +
-                        "\t" + player2.name + "'s move: " + player2.moveName
+                        "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
-                player2.duelWon();
+                cpuPlayer.duelWon();
             } else if (move1 == 3 && move2 == 2) {
                 System.out.println( player1.name + " Won: " +
                         player1.name + "'s move: " + player1.moveName +
-                        "\t" + player2.name + "'s move: " + player2.moveName
+                        "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
                 player1.duelWon();
             } else if (move1 == 3 && move2 == 3) {
                 System.out.println("Duel Draw: " +
                         player1.name + "'s move: " + player1.moveName +
-                        "\t" + player2.name + "'s move: " + player2.moveName
+                        "\t" + cpuPlayer.name + "'s move: " + cpuPlayer.moveName
                 );
                 System.out.println("Duel Draw");
             }
@@ -101,8 +108,8 @@ public class Main {
 
                 gameCheck(player1);
 
-            } else if (player2.score == 2) {
-                gameCheck(player2);
+            } else if (cpuPlayer.score == 2) {
+                gameCheck(cpuPlayer);
 
             }
 
@@ -123,9 +130,4 @@ public class Main {
 
 }
 
-// Things TODO
 
-// 1. Make Winning Statement more clear
-// 2. Show Player Points after every duel
-// 3. Handle Wrong Inputs
-// 4. Give Option to Restart Game or Start New Game

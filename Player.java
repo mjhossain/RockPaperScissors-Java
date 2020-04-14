@@ -7,6 +7,11 @@ public class Player {
     int score;
     static Scanner input = new Scanner(System.in);
     static Random rand = new Random();
+    boolean isCpu;
+
+    Player(boolean cpu) {
+        this.isCpu = cpu;
+    }
 
     public void setPlayer(String name) {
         this.name = name;
@@ -16,20 +21,21 @@ public class Player {
         System.out.println(this.name);
     }
 
-    public int makeMove(boolean cpu) {
-        int move = 0;
+    public int makeMove() {
+        int move;
 
-        if (!cpu) {
-            System.out.println("\n\n1 - Rock\n2 - Paper\n3 - Scissors\n");
+        if (!this.isCpu) {
+
             System.out.print(this.name + "'s move: ");
             move = input.nextInt();
-
+            /*
             while(move < 1 || move > 3) {
                 System.out.print("Invalid input enter again: ");
                 move = input.nextInt();
             }
+             */
         } else {
-            move = rand.nextInt(3 + 1);
+            move = rand.nextInt(4);
         }
 
 

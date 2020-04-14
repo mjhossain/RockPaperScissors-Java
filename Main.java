@@ -22,8 +22,8 @@ public class Main {
     static Random rand = new Random();
 
     public static void main(String[] args) {
-        Player player1 = new Player();
-        Player cpuPlayer = new Player();
+        Player player1 = new Player(false);
+        Player cpuPlayer = new Player(true);
         boolean gamePoint = false;
 
 
@@ -35,18 +35,21 @@ public class Main {
 
         System.out.print("Enter Player Name: ");
         name1 = input.nextLine();
-        player1.setPlayer(name1);
 
+        player1.setPlayer(name1);
         cpuPlayer.setPlayer("CPU");
+
+        // TODO Set Point System Here
 
         System.out.println("\n\n****\tGame Started\t****\n\n");
         //testGame(player1, cpuPlayer);
-
+        System.out.println("\n\n1 - Rock\t2 - Paper\t3 - Scissors\t");
         while(gamePoint == false) {
             int move1, move2;
             String move1Name, move2Name;
-            move1 = player1.makeMove(false);
-            move2 = cpuPlayer.makeMove(true);
+
+            move1 = player1.makeMove();
+            move2 = cpuPlayer.makeMove();
 
 
             if(move1 == 1 && move2 == 1) {
@@ -104,11 +107,11 @@ public class Main {
                 System.out.println("Duel Draw");
             }
 
-            if(player1.score == 2) {
+            if(player1.score == 3) {
 
                 gameCheck(player1);
 
-            } else if (cpuPlayer.score == 2) {
+            } else if (cpuPlayer.score == 3) {
                 gameCheck(cpuPlayer);
 
             }
